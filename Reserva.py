@@ -21,15 +21,12 @@ class Reserva(Entidad):
 
     def __init__(self, cliente, servicio, duracion):
 
-        # Validar el cliente
         if not isinstance(cliente, Cliente):
             raise ReservaError("El cliente no es válido.")
 
-        # Validar el servicio
         if not isinstance(servicio, Servicio):
             raise ReservaError("El servicio no es válido.")
 
-        # Validar la duración
         if (
             not isinstance(duracion, (int, float))
             or isinstance(duracion, bool)
